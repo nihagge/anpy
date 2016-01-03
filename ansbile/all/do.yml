@@ -1,0 +1,8 @@
+- hosts: all
+  remote_user: root
+
+  tasks:
+
+   - name: Do some bash.commands
+     command: /usr/bin/touch /tmp/blabla
+     command: /usr/sbin/ejabberdctl register alfred 172 alfred 

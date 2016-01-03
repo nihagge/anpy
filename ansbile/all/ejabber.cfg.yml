@@ -1,0 +1,8 @@
+- hosts: all
+  tasks:
+#   - name: copy blablablaxxxxxxxx
+   action: template src=/Users/nhagge/Dropbox/ansible_playbooks/templates/ejabberd.cfg.j2
+           dest=/etc/ejabberd/ejabberd.cfg
+           owner=root group=root mode=0644
+           backup=yes
+   # register: hostname_file

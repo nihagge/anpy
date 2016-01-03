@@ -1,0 +1,10 @@
+- hosts: VM
+  tasks:
+   - name: Install Nginx
+     apt: pkg=nginx state=installed update_cache=true
+   - name: Install ejabberd
+     apt: pkg=ejabberd state=installed 
+   - name: Install vim
+     apt: pkg=vim state=installed
+   - name: Install lynx
+     apt: pkg=lynx state=installed
