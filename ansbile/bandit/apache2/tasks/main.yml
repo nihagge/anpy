@@ -1,0 +1,25 @@
+---
+  - name: install apache2 ...
+    apt: name={{ item }} state=present
+    with_items:
+      - apache2
+      - python-pip
+      - python-bottle
+      - python-virtualenv
+      - libapache2-mod-wsgi
+
+  - name: ensure mod_wsgi in enabled
+    apache2_module: state=present name=wsgi
+    notify: restart apache2
+
+  - name: deactive default site
+    file: path=/etc/apache2/sites-enabled/000-default.conf state=absent
+    notify: restart apache2
+
+  - name: copy new virtual host config
+    copy: src=apache2/files/bandit.conf dest=/etc/apache2/sites-available/bandit.conf mode=755
+    notify: restart apache2
+
+  - name: activate new vairtual host config
+    file: src=/etc/apache2/sites-available/bandit.conf dest=/etc/apache2/sites-enabled/bandit.conf state=link
+    notify: restart apache2

@@ -1,0 +1,5 @@
+---
+  - hosts: bandit
+    become: yes
+    roles:
+      - apache2
