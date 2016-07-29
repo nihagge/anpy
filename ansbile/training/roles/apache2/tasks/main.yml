@@ -1,0 +1,4 @@
+---
+  - name: de-activate apache sites-available
+    file: path=/etc/apache2/sites-enabled/000-default.conf state=absent
+    notify: restart apache2

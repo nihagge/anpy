@@ -1,0 +1,38 @@
+---
+  - name: install components
+    apt: name={{item}} state=present
+    with_items:
+      - apache2
+      - python-pip
+      - python-virtualenv
+      - libapache2-mod-wsgi
+      - python-mysqldb
+
+
+  - name: start apache2
+    service: name=apache2 state=started enabled=yes
+
+  - name: ensure mod_wsgi is anabled
+    apache2_module: state=present name=wsgi
+    notify: restart apache2
+
+  - name: copy demo app template
+    template: src=demo.wsgi.j2 dest=/var/www/demo mode=755
+    notify: restart apache2
+
+  - name: copy apache config
+    copy: src=roles/demo_app/files/demo/demo.conf dest=/etc/apache2/sites-available/
+    notify: restart apache2
+
+  - name: copy ports.conf
+    copy: src=roles/demo_app/ports.conf dest=/etc/apache2/
+    notify: restart apache2
+
+  - name: setup python virtual env
+    pip: requirements=/var/www/demo/requirements.txt virtualenv=/var/www/demo/.venv
+    notify: restart apache2
+
+
+  - name: activate demo apache site
+    file: src=/etc/apache2/sites-available/demo.conf dest=/etc/apache2/sites-enabled/demo.conf state=link
+    notify: restart apache2

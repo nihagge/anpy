@@ -1,0 +1,31 @@
+---
+  - hosts: lb
+    become: yes
+    tasks:
+      - service: name=nginx state=stopped
+      - wait_for: port=80 state=drained
+
+  - hosts: web
+    become: yes
+    tasks:
+      - service: name=apache2 state=stopped
+      - wait_for: port=8080 state=stopped
+
+  - hosts: db
+    become: yes
+    tasks:
+      - service: name=mysql state=restarted
+      - wait_for: port=3306 state=started
+
+#Bring stack up
+  - hosts: web
+    become: yes
+    tasks:
+      - service: name=apache2 state=started
+      - wait_for: port=8080 state=started
+
+  - hosts: lb
+    become: yes
+    tasks:
+      - service: name=nginx state=started
+      - wait_for: port=80 state=started

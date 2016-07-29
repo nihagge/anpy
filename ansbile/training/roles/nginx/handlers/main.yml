@@ -1,0 +1,3 @@
+---
+  - name: r#estart nginx
+    service: name=nginx state=restarted
