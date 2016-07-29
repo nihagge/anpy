@@ -1,0 +1,18 @@
+- hosts: all
+  remote_user: root
+  vars:
+    # created with:
+    # python -c 'import crypt; print crypt.crypt("This is my Password", "$1$SomeSalt$")'
+    password: $1$SomeSalt$UqddPX3r4kH3UL5jq5/ZI.
+
+  tasks:
+
+    # Walk through account creation, modification, and deletion
+    - name: Create user Alfred
+      user: name=alfred comment=batman group=users shell=/bin/bash createhome=yes password={{password}}
+    - name: Copy bash_profile ...
+      copy: src=/Users/nhagge/Dropbox/configs/bash_profile dest=/home/alfred/.bash_profile
+    - name: Create user Kano
+      user: name=kato comment=greenhornet group=users shell=/bin/bash createhome=yes password={{password}}
+    - name: Copy bash_profile ...
+      copy: src=/Users/nhagge/Dropbox/configs/bash_profile dest=/home/kato/.bash_profile

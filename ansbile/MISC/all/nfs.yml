@@ -1,0 +1,10 @@
+- hosts: vm
+  tasks:
+   - name: Install NFS
+     apt: pkg=nfs-kernel-server state=installed force=yes
+   - name: Make directoy for exports
+     file: path=/srv/homes state=directory mode=0755
+   - name: Copy /etc/exports
+     copy: src=~/Dropbox/ansible_playbooks/config/etc/exports dest=/etc/exports backup=yes
+   - name: Is NFS-Server running ?
+     service: name=nfs-kernel-server state=restarted
