@@ -16,5 +16,3 @@ exit()
 
 nb = input('Choose a number')
 print ('Number%s \n' % (nb))
-
-123
