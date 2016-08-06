@@ -6,3 +6,4 @@
     - python-httplib2
     - tmux
     - htop
+  tags: [ 'packages' ]

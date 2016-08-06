@@ -8,31 +8,42 @@
       - libapache2-mod-wsgi
       - curl
       - python-mysqldb
+    tags: [ 'configured' ]
+
   - name: install nginx
     apt: name=nginx state=present update_cache=yes
-
+    tags: [ 'configured' ]
   - name: ensure nginx started
     service: name=nginx state=started enabled=yes
+    tags: [ 'configured' ]
 
   - name: configure nginx site
     template: src=nginx.conf.j2 dest=/etc/nginx/sites-available/{{ item.key }} mode=064
     with_dict: sites
     notify: restart nginx
+    tags: [ 'configured' ]
 
   - name:  get active sites
     shell: ls -l /etc/nginx/sites-enabled
     register: active
+    changed_when: "active.stdout_lines"
+    tags: [ 'configured' ]
+
+  - debug: var=db_name
+  - debug: var=db_user_name
 
   - name: de-active default config
     file: path=/etc/nginx/sites-enabled/{{ item }} state=absent
     with_items: active.stdout_lines
     when: item not in sites
     notify: restart nginx
+    tags: [ 'configured' ]
 
   - name: active new nginx config
     file: src=/etc/nginx/sites-available/{{ item.key }} dest=/etc/nginx/sites-enabled/{{ item.key }} state=link
     with_dict: sites
     notify: restart nginx
+    tags: [ 'configured' ]
 
   #- name: ensure nignx started
   #  service: name:nginx state=started enabled=yes

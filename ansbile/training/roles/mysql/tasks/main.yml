@@ -28,5 +28,3 @@
   - name: create user
     mysql_user: name={{ db_user_name }} password={{ db_user_password }} priv={{ db_user_name }}.*:ALL
                 host='{{ db_host }}' state=present
-    #mysql_user: name={{ db_user_name }} password={{ db_user_password }} priv={{ db_user_name }}.*:ALL
-    #            host='{{ db_user_host }}' state=present
