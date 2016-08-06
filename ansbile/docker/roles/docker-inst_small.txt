@@ -1,0 +1,20 @@
+
+    6  sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+    8
+   10  apt-cache policy docker-engine
+   11
+   14  apt-get install linux-image-extra-$(uname -r)
+
+   18  apt-get -f install linux-generic linux-headers-generic linux-image-generic
+   19  apt-cache search grub-update
+   21
+
+
+   update-grub
+   22  reboot
+   23  curl -L https://github.com/docker/machine/releases/download/v0.7.0/docker-machine-`uname -s`-`uname -m` > /usr/local/bin/docker-machine
+   24  chmod +x /usr/local/bin/docker-machine
+   25  /usr/local/bin/docker-machine
+
+   86  figlet -f small docker-test-host > /etc/motd
+   87
