@@ -8,9 +8,6 @@
   - name: install docker related components
     apt: name={{item}} state=present update_cache=yes
     with_items:
-      - vim
-      - tmux
-      - figlet
       - apt-transport-https
       - ca-certificates
       - linux-generic

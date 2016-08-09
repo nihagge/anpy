@@ -1,0 +1,6 @@
+---
+  - hosts: docker-test
+#    gather_facts: False
+    become: yes
+    roles:
+      - base
