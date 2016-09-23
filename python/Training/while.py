@@ -1,5 +1,77 @@
+#Lambda:
+
+leng = lambda item: len(item)
+
+leng('bal bla bla')
+
+exit()
 
 
+sqare = lambda num: num**2
+sqare (3)
+print num
+
+exit()
+def square(num):
+    return num**2
+square(12)
+
+
+exit()
+#function:
+def is_prime(num):
+    """"
+    This function checks for prime numbers
+    """
+    #print "Number:" 'num'
+    #print num
+    for n in range(2,num):
+        if num % n == 0:
+            print "not prime"
+            break
+    else:
+        print "This number is prime ;)"
+
+#    if num % 2==0:
+#        print "could be"
+
+is_prime(1711111111)
+
+
+exit()
+def add_num(num1, num2):
+    return num1+num2
+
+x = add_num(2,3)
+print x
+
+exit()
+def greeting(name):
+    print "hallo," + name
+
+greeting("nils")
+
+
+exit()
+
+def my_addition_func(arg1, arg2):
+    """
+    Comment!
+    """
+    print arg1
+    print arg2
+    print arg1+arg2
+
+my_addition_func(1,2)
+
+
+
+
+
+#Methods:
+l = [1,2,3,4,5]
+l.append(3)
+print
 exit()
 
 

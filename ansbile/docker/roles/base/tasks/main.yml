@@ -1,6 +1,10 @@
 ---
   - name: install some basic packages
-    apt: name {{ item }} state=present update_cache=yes cache_valid_time=86400
+
+
+
+
+    apt: name={{ item }} state=present update_cache=yes cache_valid_time=86400
     with_items:
     - tmux
     - vim
@@ -13,6 +17,7 @@
     - nmap
     - git
     - figlet
+    - screenfetch
 
   - name: set motd
     shell: /usr/bin/figlet -f small {{ ansible_hostname }} > /etc/motd

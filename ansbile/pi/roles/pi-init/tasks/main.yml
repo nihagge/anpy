@@ -1,0 +1,25 @@
+---
+# tasks file for pi-init
+- name: install some packages
+  apt: name={{item}} state=present update_cache=yes
+  with_items:
+    - curl
+    - wget
+    - lynx
+    - atop
+    - htop
+    - vim
+    - python-pip
+    - python-dev
+    - python-twython
+- name: install python packages with pip
+  pip: name={{item}}
+  with_items:
+    - RPi.GPIO
+    - Adafruit_BBIO
+    - tweepy
+
+
+
+
+## pip install Adafruit_BBIO

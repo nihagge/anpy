@@ -9,8 +9,6 @@ for element in l:
         print ('greater than %s ' % (check_a))
     else:
         print "---"
+        
     if element < 9:
         print ('still unter %s' % (check_b)
-    else:
-        print "..."
-
