@@ -16,8 +16,8 @@
     - scons
     - swig
     - build-essential
-
-
+  tags:
+    - packages
 
 - name: install python packages with pip
   pip: name={{item}}
@@ -27,21 +27,28 @@
     - tweepy
     - pyscons
     - bioscons
-  # - scons
+  tags:
+    - packages
 
+- name: Install Raspberry Pi PWM library for WS281X LEDs
+  git: repo=https://github.com/jgarff/rpi_ws281x.git dest={{NEOHOME}} refspec=+refs/pull/*:refs/heads/*
 
-- name: install Raspberry Pi PWM library for WS281X LEDs
-  git: repo=https://github.com/jgarff/rpi_ws281x.git dest=/opt/neopixel refspec=+refs/pull/*:refs/heads/*
+- name: Give it to user pi
+  # command: chown -R pi:pi /home/pi
+  file: path=/home/pi/ owner=pi group=pi mode=0755
+
+- name: Compile it ...
+  command: chdir=/home/pi/neopixel /usr/bin/scons
+
+- name: Install the library ...!!!!
+  command: chdir=/home/pi/neopixel/python python ./setup.py install
+
 - name: copy twitter.py
+  copy: src=roles/pi-init/files/twitter.py dest=/home/pi/bin/ owner=pi group=pi mode=0744
+  tags:
+    - scripts
 
-  copy: src=roles/pi-init/files/twitter.py dest=/home/pi/bin/ owner=pi group=pi mode=0644
-
-#- name: setup python stuff ...
-#  command: python /opt/neopixel/python/setup.py install
-# - name: copy twitter python script to destination
-#  copy: src:files:twitter.py dest:/home/pi
-#git clone https://github.com/jgarff/rpi_ws281x.git
-#cd rpi_ws281x
-#scons
-
-## pip install Adafruit_BBIO
+- name: copy hashtag.py
+  copy: src=roles/pi-init/files/hashtag.py dest=/home/pi/bin owner=pi group=pi mode=0744
+  tags:
+    - scripts
