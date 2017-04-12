@@ -1,0 +1,50 @@
+---
+# tasks file for MySQL
+- name: install some packages ...
+  apt: name={{item}} state=installed update_cache=yes
+  with_items:
+      - curl
+      - wget
+      - lynx
+      - atop
+      - htop
+      - vim
+      - git
+      - python-mysqldb
+      - mysql-server
+  tags:
+    - packages
+
+- name: start MySQL ...
+  service: name=mysql state=started enabled=yes
+
+- name: add some MySQL user ...
+  mysql_user: name={{item}} password='*9B500343BC52E2911172EB52AE5CF4847604C6E5' encrypted=yes priv=*.*:ALL state=present
+  # that hashed password is foobar ;)
+  with_items:
+    - alfred
+    - kato
+
+- name: Create Alfreds test database
+  mysql_db: db=alfred state=present
+
+- name: Create Katos test database
+  mysql_db: db=kato state=present
+
+#- name: create Katos test database ...
+#  mysql_db: db=kato state=present
+
+- name: change the binding ip for mysql ...
+  lineinfile: dest=/etc/mysql/my.cnf regexp=^bind-address
+              line="bind-address = 0.0.0.0"
+  notify: restart mysql
+
+- name: change server_id ...
+  lineinfile: dest=/etc/mysql/my.cnf regexp=^server_id
+              line="server_id = 11101"
+  notify: restart mysql
+
+- name: change query_cache_type to 1
+  lineinfile: dest=/etc/mysql/my.cnf
+              line="query_cache_type=1"
+  notify: restart mysql

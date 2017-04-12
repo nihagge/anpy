@@ -1,0 +1,9 @@
+---
+  - hosts: sensu
+    become: True
+    gather_facts: false
+    vars:
+      user: sensu
+    roles:
+        - sensu-server
+# sudo echo "$USER ALL=(ALL) NOPASSWD:ALL" | sudo tee -a /etc/sudoers

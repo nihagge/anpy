@@ -8,7 +8,6 @@ I wrote this one to feed my newpixel wheel
 import tweepy
 import time
 
-
 CONSUMER_KEY = '1sfCEr19Px0VMBRJrbEr3FaY1'#keep the quotes, replace this with your consumer key
 CONSUMER_SECRET = 'vKen6YaghHZms7KvsEY0rON9ZaVE6HNrE58Z19o8BPughsoFEm'#keep the quotes, replace this with your consumer secret key
 ACCESS_KEY = '3415136763-eJauHqdkJUDip2Bu0jaifoPZDk6bM8TcvnsaCYq'#keep the quotes, replace this with your access token

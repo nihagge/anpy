@@ -1,0 +1,63 @@
+---
+  - name: add i3-respository
+    apt_repository: repo='deb http://debian.sur5r.net/i3/ xenial universe' state=present
+  - name: add keyring ...
+    command: "apt-get --allow-unauthenticated install sur5r-keyring"
+  - name: install some packages ....!!!
+    apt: name={{item}} state=present update_cache=yes
+    with_items:
+      - curl
+      - wget
+      - lynx
+      - atop
+      - htop
+      - vnstat
+      - dstat
+      - tcpstat
+      - vim
+      - tmux
+      - git
+      - xcompmgr
+      - screenfetch
+      - nitrogen
+      - python-pip
+      - python-dev
+      - python3
+      - scons
+      - swig
+      - build-essential
+      - scrot
+      - hollywood
+      - i3
+      - i3status
+    tags: [ packages ]
+
+  - name: Create i3 directory
+    file: path=/home/{{ user }}/.config/i3/config state=directory owner={{ user }} group={{ user }} mode=0775 recurse=yes
+  - name: Create vim directory
+    file: path=/home/{{ user }}+
+  - name: Copy vim-syntax highlighter ...
+    file: src=roles/MyMachine/files/vimhighlighter/* dest=/home/{{ user }}/.vim owner={{ user }} group={{ user }} mode=0755
+  - name: Copy bash_profile ...
+    copy: src=roles/MyMachine/files/bash_profile dest=/home/{{ user }}/.bash_profile owner={{ user }} group={{ user }} mode=0744
+  - name: Copy vimrc ...
+    copy: src=roles/MyMachine/files/vimrc dest=/home/{{ user }}/.vimrc owner={{ user }} group={{ user }} mode=0744
+  - name: create i3-folder
+    file: path=/{{ user }}/.config/i3/config state=directory
+  - name: Copy i3-config ...
+    copy: src=roles/MyMachine/files/config dest=/home/{{ user }}/.config/i3/config backup=yes owner={{ user }} group={{ user }} mode=0744
+    tags: [ i3 ]
+
+
+#i3 läuft evtl nicht, dann lässt sich auch der reload nicht ausführen
+#  - name: reload i3-config
+#    command: "/usr/bin/i3-msg reload"
+#    tags: [ i3 ]
+#  - name: restart i3-config
+#    command: "/usr/bin/i3-msg restart"
+#    tags: [ i3 ]
+
+
+
+#  - name: configure some users
+#    user: name={{ user }} comment={{ user }} group=users shell=/bin/bash createhome=yes password="$6$9AdYi2Of$aVc5oaf5FrtPtke.10kS5tEICCXisq9B6mPuhGCUOqsCryRpMfZ4Qp9c3qzt92iTTPVvIae1QqvEyxtg.x/nm."

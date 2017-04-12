@@ -1,0 +1,68 @@
+---
+  # tasks file for sensu-server
+  - name: install some components
+    apt: name={{item}} state=present update_cache=yes
+    with_items:
+      - erlang
+      - rabbitmq-server
+      - redis-server
+      - wget
+      - vim
+      - screen
+      - lynx
+      - aptitude
+      - uchiwa
+    tags: [ packages ]
+
+# be sure all services are started after boot
+  - name: start Rabbit MQ ...
+    service: name=rabbitmq-server state=started enabled=yes
+
+  - name: start redis-server ...
+    service: name=redis-server state=started enabled=yes
+
+  - name: download PGP Key for sensu apt server ...
+    get_url:
+      url: https://sensu.global.ssl.fastly.net/apt/pubkey.gpg
+      dest: /tmp/pubkey.gpg
+      mode: 0440
+
+  - apt_key:
+      file: /tmp/pubkey.gpg
+      state: present
+
+  - apt_repository:
+      repo: deb https://sensu.global.ssl.fastly.net/apt xenial main
+      state: present
+
+  - name: install sensu ...
+    apt: name={{item}} state=present update_cache=yes
+    with_items:
+        - sensu
+
+# https://sensu.global.ssl.fastly.net/apt $CODENAME main" | sudo tee /etc/apt/sources.list.d/sensu.list
+
+# wget -q https://sensu.global.ssl.fastly.net/apt/pubkey.gpg -O- | sudo apt-key add -
+
+# - name: install pub pgp key
+#    apt_key: url="https://sensu.global.ssl.fastly.net/apt/pubkey.gpg"
+#    state: present
+
+#  - name: add pubkey to install sensu ...
+#    command:  wget -q https://sensu.global.ssl.fastly.net/apt/pubkey.gpg -O- | sudo apt-key add -
+
+#  - name: add repository ...
+#    command: echo "deb     https://sensu.global.ssl.fastly.net/apt $CODENAME main" | sudo tee /etc/apt/sources.list.d/sensu.list
+
+#  - name: install sensu ....
+#    apt: name= {{item}} state=present update_cache=yes
+#    with_items:
+#      - sensu
+
+
+#  https://sensu.global.ssl.fastly.net/apt/pubkey.gpg
+##
+##
+##run rabbitctl add_vhost /sensu; rabbitmqctl add_user sensu  ; rabbitmqctl set_permission -p /sensu sensu ".*" ".*" ".*"; rabbitmq-plugins enable rabbitmq_management - after the first run
+##
+##

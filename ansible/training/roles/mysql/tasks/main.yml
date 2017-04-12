@@ -1,0 +1,28 @@
+---
+  - name: install some tools
+    apt: name={{item}} state=present
+    with_items:
+      - python-mysqldb
+
+  - name: install mysql-server
+    apt: name=mysql-server state=present update_cache=yes
+
+#  - name: ensure mysql listening on all IP
+#    lineinfile: dest=/etc/mysql/mysql.conf.d/mysqld.cnf regexp=^bind-address
+#                line= "bind-address = {{ ansible_ens33.ipv4.addresses  }}"
+#
+  - name: ensure mysql listening on all IP
+    lineinfile: dest=/etc/mysql/mysql.conf.d/mysqld.cnf regexp=^bind-address
+                line="bind-address = {{ ansible_ens33.ipv4.address }}"
+
+    notify: restart mysql
+
+  - name: ensure mysql started
+    service: name=mysql state=started enabled=yes
+
+  - name: create demo database
+    mysql_db: name=demo state=present
+
+  - name: create user
+    mysql_user: name={{ db_user_name }} password={{ db_user_password }} priv={{ db_user_name }}.*:ALL
+                host='{{ db_host }}' state=present

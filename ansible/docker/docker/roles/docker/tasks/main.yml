@@ -1,0 +1,27 @@
+---
+  - name: add server-key
+    command: apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+  - name: copy docker-list
+    copy: src=files/docker.list dest=/etc/apt/sources.list.d/ mode=0644
+  - name: update apt
+    apt: update_cache=yes
+  - name: install docker related components
+    apt: name={{item}} state=present update_cache=yes
+    with_items:
+      - apt-transport-https
+      - ca-certificates
+      - linux-generic
+      - linux-headers-generic
+      - linux-image-generic
+      - linux-image-extra-{{ansible_kernel}}
+      - docker-engine
+#      - grub-update
+  - name: update cache policy
+    command: apt-cache policy docker-engine
+  - name: ansure docker is started
+    service: name=docker state=started enabled=yes
+
+  - name: add cgroup to grub
+    lineinfile: dest=/etc/default/grub regexp=^GRUB_CMDLINE_LINUX line='GRUB_CMDLINE_LINUX="cgroup_enable=memory swapaccount=1"'
+  - name: active new grub config
+    command: update-grub

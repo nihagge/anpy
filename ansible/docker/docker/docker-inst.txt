@@ -1,0 +1,240 @@
+    1  apt-get update
+    2  apt-get upgrade
+    3  apt-get autocleanb
+    4  apt-get autoclean
+    5  apt-get upgrade
+    6  sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+    7  sudo vi /etc/apt/sources.list.d/docker.list
+    8  apt-get update
+    9  apt-get purge lxc-docker
+   10  apt-cache policy docker-engine
+   11  apt-get upgrade
+   12  apt-get install linux-image-extra
+   13  apt-cache search linux-image-extra
+   14  apt-get install linux-image-extra-$(uname -r)
+   15  apt-get upgrade -f
+   16  apt-get -t install v
+   17  apt-get -t install linux-generic linux-headers-generic linux-image-generic
+   18  apt-get -f install linux-generic linux-headers-generic linux-image-generic
+   19  apt-get install openssh-server
+   20  apt-cache search grub-update
+   21  update-grub
+   22  reboot
+   23  curl -L https://github.com/docker/machine/releases/download/v0.7.0/docker-machine-`uname -s`-`uname -m` > /usr/local/bin/docker-machine
+   24  chmod +x /usr/local/bin/docker-machine
+   25  /usr/local/bin/docker-machine
+   26  sudo vi /etc/hostname 
+   27  ifconfig 
+   28  mkdir .ssh
+   29  vi authorized_keys
+   30  ls -l
+   31  ls -l authorized_keys 
+   32  mv authorized_keys .ssh/
+   33  ls -l
+   34  ls -la
+   35  chown -R nelse:nelse 
+   36  chown -R nelse:nelse  *
+   37  reboot 
+   38  vi /etc/hosts
+   39  reboot 
+   40  apt-get update
+   41  cp /home/nelse/.bash_profile /root/
+   42  cd ~
+   43  ls -la
+   44  apt-get install tmux
+   45  uptime 
+   46  apt-get update
+   47  cd /etc/apt/
+   48  ls -lrt
+   49  cd apt.conf.d/
+   50  l -l
+   51  ls -l
+   52  cd ..
+   53  ls -l
+   54  ls -lrt
+   55  cd apt.conf.d/
+   56  ls -l
+   57  docker ps -a
+   58  atop
+   59  htop 
+   60  whereis  top
+   61  whereis uptime
+   62  apt-cache search twitter
+   63  apt-get install ttytter
+   64  poweroff 
+   65  apt-cahce search srolline
+   66  apt-cache search srolline
+   67  apt-cache search scrolline
+   68  find / -name "*.flf"
+   69  figlet -f block block
+   70  figlet -f mini block
+   71  figlet -f mini mini
+   72  figlet -f term term
+   73  figlet -f slant slant
+   74  figlet -f script sctipt
+   75  cd /usr/share/f
+   76  figlet -f block Docker > /var/run/motd.dynamic
+   77  cat /var/run/motd.dynamic
+   78  apt-get autoremocve
+   79  apt-get autoremove
+   80  apt-get autoreclean
+   81  apt-get autoclean
+   82  figlet -f block Docker
+   83  figlet -f block Docker >> /etc/motd
+   84  figlet -f small small
+   85  figlet -f small docker-test-host
+   86  figlet -f small docker-test-host > /etc/motd 
+   87  man figled
+   88  man figlet
+   89  apt-get search vagrant
+   90  apt-cache search vagrant
+   91  apt-get install vagrant
+   92  apt-cache search java8
+   93  apt-get install java8
+   94  apt-get install java
+   95  apt-cache search java
+   96  apt-cache search java8
+   97  apt-get install default-jdk
+   98  pwd
+   99  apt-cache search firefix
+  100  apt-cache search firefix
+  101  apt-cache search firefox
+  102  apt-get install firefox
+  103  firefox 
+  104  apt-cache search virtual-box
+  105  apt-cache search virtualbox
+  106  apt-get install virtualbox
+  107  vagrant  up
+  108  reboot 
+  109  cd git-sandbox/Service-Discovery-Workshop_DevOpsCon_2016/
+  110  vi Vagrantfile 
+  111  firefox 
+  112  vagrant  up
+  113  apt-get update
+  114  apt-get upgrade
+  115  vagrant  up
+  116  vagrant  status
+  117  vagrant  ssh consul
+  118  docker ps -a
+  119  docker rm 368ebd510144
+  120  docker ps -a
+  121  docker rm 605806ff0d28
+  122  docker rm d4ee46bfdc76
+  123  docker ps -a
+  124  docker rm 0dc0aabb9d34
+  125  docker rm 7b674fc5dba8
+  126  docker image
+  127  docker images
+  128  docker rmi hello-
+  129  docker rmi hello-world
+  130  docker images
+  131  docker pull consul
+  132  docker run -d --name=dev-consul consul
+  133  docker ps -a
+  134  ifconfig 
+  135  vagrant init hashicorp/precise64
+  136  ls -la
+  137  rm Vagrantfile 
+  138  vagrant init hashicorp/precise64
+  139  vagrant  up
+  140  cd /opt/
+  141  mkdir vagrant_box
+  142  cd vagrant_box
+  143  vagrant init hashicorp/precise64
+  144  vagrant  up
+  145  VBoxManage 
+  146  vagrant  status
+  147  vagrant  
+  148  vagrant  halt
+  149  vagrant  status
+  150  vagrant  up
+  151  cd /opt/
+  152  ls -l
+  153  cd vagrant_box/
+  154  rm .rf *
+  155  rm .rf .*
+  156  rm -rf *
+  157  rm -rf .*
+  158  ls -la
+  159  cd ..
+  160  ls -l
+  161  cd ..
+  162  chmod nelse:staff *
+  163  ls -l /home/nelse/
+  164  chown -R nelse:nelse *
+  165  ls -l
+  166  apt-get uodarte
+  167  apt-get update
+  168  apt-get upgrade
+  169  docker pull centos:centos6
+  170  docker
+  171  man docker
+  172  docker -it run centos6
+  173  docker -t run centos6
+  174  docker run -t -i centos:centos6 /bin/bash
+  175  docker run -t -i centos:centos6 /sbin/uptime
+  176  whereis  uptime
+  177  docker run -t -i centos:centos6 /usr/bin/uptime
+  178  docker images
+  179  docker pull centos:centos7
+  180  docker run -t -i centos:centos7 /bin/bash
+  181  docker volume ls
+  182  apt-get update
+  183  ls -l /var/lib/dpkg/lock
+  184  date
+  185  apt-get update
+  186  ls -l /var/lib/dpkg/lock
+  187  ping www.google.de
+  188  reboot 
+  189  apt-get update
+  190  dpkg --configure -a
+  191  apt-get update
+  192  apt-get upgrade
+  193  vagrant 
+  194  apt-get update
+  195  apt-get upgrade
+  196  apt-get autoclean
+  197  apt-get autoremove
+  198  cd /home/
+  199  ls -l
+  200  adduser ansible
+  201  history  |grep figlet
+  202  figlet -f small docker-host > /etc/motd
+  203  vi /etc/motd
+  204  poweroff 
+  205  ls -l /home/
+  206  cd /home/ansible/
+  207  ls -l
+  208  mkdir .ssh
+  209  cd .ssh
+  210  cp /home/nelse/.ssh/authorized_keys .
+  211  cd ..
+  212  chown ansible:ansible *
+  213  chown -R ansible:ansible .ssh/
+  214  ls -la
+  215  apt-get update
+  216  ls -l /var/lib/dpkg/
+  217  date
+  218  ps aux|grep dpkg
+  219  apt-get udpate
+  220  apt-get update
+  221  apt-get upgrade
+  222  docker ps -a
+  223  history  |grep docker
+  224  docker run -t -t centos:centos6 /bin/bash
+  225  uptime
+  226  docker ps -a
+  227  docker rmi acb
+  228  docker rmi  b
+  229  docker rmi  acb375bc6e7b
+  230  docker ps -a
+  231  docker rm acb375bc6e7b
+  232  docker ps -a
+  233  docker stop acb375bc6e7b
+  234  docker ps -a
+  235  docker rmi acb375bc6e7b
+  236  docker rm acb375bc6e7b
+  237  docker ps -a
+  238  exit
+  239  history 
+  240  history > ~/docker-inst.txt

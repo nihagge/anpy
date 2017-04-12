@@ -1,0 +1,5 @@
+---
+  - hosts: docker-poc
+    become: yes
+    roles:
+      - docker

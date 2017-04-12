@@ -1,0 +1,37 @@
+---
+  - name: install some basic packages
+    apt: name={{ item }} state=present update_cache=yes cache_valid_time=86400
+    with_items:
+    - tmux
+    - vim
+    - htop
+    - atop
+    - lynx
+    - wget
+    - curl
+    - netcat
+    - nmap
+    - git
+    - figlet
+    - screenfetch
+
+  - name: set motd
+    shell: /usr/bin/figlet -f small {{ ansible_hostname }} > /etc/motd
+
+#  - name: configure some users
+#    user: name={{ user }} comment={{ item }} group=users shell=/bin/bash createhome=yes password={{password}}
+#    with_items:
+#      - alfred
+#      - kato
+
+#  - name: copy bashrc
+#    copy: src=files/.bash_profile dest=/home/{{ item }}
+#    with_items:
+#      - alfred
+#      - kato
+
+#  - name: copy vimrc
+#    copy: src=files/.vimrc dest=/home/{{ item }}
+#    with_items:
+#      - alfred
+#      - kato

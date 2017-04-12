@@ -1,0 +1,58 @@
+---
+# tasks file for pi-init
+#- name: add repository for PyCHARM
+  #  apt_repository: repo='ppa:mystic-mirage/pycharm'
+- name: install some packages
+  apt: name={{item}} state=present update_cache=yes
+  with_items:
+    - curl
+    - wget
+    - lynx
+    - atop
+    - htop
+    - vim
+    - git
+    - python-pip
+    - python-dev
+    - python-twython
+    - python3  
+    - scons
+    - swig
+    - build-essential
+#   - pycharm-community
+  tags:
+    - packages
+
+- name: install python packages with pip
+  pip: name={{item}}
+  with_items:
+    - RPi.GPIO
+    - Adafruit_BBIO
+    - tweepy
+    - pyscons
+    - bioscons
+  tags:
+    - packages
+
+- name: Install Raspberry Pi PWM library for WS281X LEDs
+  git: repo=https://github.com/jgarff/rpi_ws281x.git dest={{NEOHOME}} refspec=+refs/pull/*:refs/heads/*
+
+- name: Give it to user pi
+  # command: chown -R pi:pi /home/pi
+  file: path=/home/pi/ owner=pi group=pi mode=0755
+
+- name: Compile it ...
+  command: chdir=/home/pi/neopixel /usr/bin/scons
+
+- name: Install the library ...!!!!
+  command: chdir=/home/pi/neopixel/python python ./setup.py install
+
+- name: copy twitter.py
+  copy: src=roles/pi-init/files/twitter.py dest=/home/pi/bin/ owner=pi group=pi mode=0744
+  tags:
+    - scripts
+
+- name: copy hashtag.py
+  copy: src=roles/pi-init/files/hashtag.py dest=/home/pi/bin owner=pi group=pi mode=0744
+  tags:
+    - scripts
