@@ -1,0 +1,4 @@
+Save file in vim without sudo:
+==============================
+
+:w !sudo tee %
