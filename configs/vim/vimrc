@@ -1,0 +1,53 @@
+" color evewning
+colorscheme evening
+highlight Comment cterm=bold
+syntax enable
+
+" tab = 4 spaces
+set tabstop=4
+set softtabstop=4
+set expandtab
+
+" UI settings
+set number
+set showcmd
+set cursorline
+filetype indent on " load filetype-specific indent files in ~/.vim/indent/*.vim
+
+set wildmenu
+set lazyredraw
+set showmatch
+" search settings ...
+set incsearch
+set hlsearch
+
+" set some folds setting
+"set foldenable
+"set foldlevelstart=10
+"set foldnestmax=10
+
+" move to beginning/end of line
+"nnoremap B ^
+"nnoremap E $
+
+" $/^ doesn't do anything
+"nnoremap $ <nop>
+"nnoremap ^ <nop>
+"nnoremap gV `[v`]
+
+" CtrlP settings
+"let g:ctrlp_match_window = 'bottom,order:ttb'
+"let g:ctrlp_switch_buffer = 0
+"let g:ctrlp_working_path_mode = 0
+"let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+
+"Backup is not so bad ;)
+set backup
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set backupskip=/tmp/*,/private/tmp/*
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set writebackup
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+
+"import some syntax highlighter ...
+  au BufNewFile,BufRead *.yaml,*.yml,*.sls,Dockerfile,config.Vagrantfile so ~/.vim/vimhighlighter/yaml.vim
