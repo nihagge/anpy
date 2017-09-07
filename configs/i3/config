@@ -34,6 +34,7 @@ floating_modifier $mod
 #bindsym $mod+Return exec xterm -fn -misc-fixed-r-normal--13-100-100-100-c-70-iso8859-1 -bg black -fg white
 # bindsym $mod+Return exec xterm -fn -misc-fixed-r-normal--13-100-100-100-c-70-iso8859-1 -bg black -fg white
 bindsym $mod+Return exec xterm -fa 'Monospace' -fs 10 -bg black -fg white
+bindsym $mod+l exec i3lock -c 000000 -i /home/nils/Bilder/AtariLogo.png
 
 
 # kill focused window
