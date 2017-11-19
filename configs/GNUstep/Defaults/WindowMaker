@@ -1,0 +1,150 @@
+{
+  FrameBorderColor = "#000000";
+  FTitleColor = "#ffffff";
+  DontLinkWorkspaces = NO;
+  LTCMaximizeKey = None;
+  MenuDisabledColor = "#999999";
+  CycleIgnoreMinimized = NO;
+  LastWorkspaceKey = None;
+  MoveToWorkspace9Key = None;
+  IconTitleBack = "#18191f";
+  FTitleBack = (
+    mdgradient,
+    "#18191f",
+    "#939abd",
+    "#616185",
+    "#616185",
+    "#5f5f83",
+    "#555575",
+    "#59597a",
+    "#555575",
+    "#939abd"
+  );
+  MoveToPrevWorkspaceLayerKey = None;
+  MaximizeKey = "Mod1+space";
+  ClipTitleFont = "lucida:pixelsize=10";
+  MiniwindowPreviewBalloons = NO;
+  MouseForwardButtonAction = None;
+  MoveToWorkspace7Key = None;
+  IconTitleFont = "Lucida:slant=0:weight=100:width=100:pixelsize=10";
+  LargeDisplayFont = "Helvetica:slant=0:weight=80:width=100:pixelsize=48";
+  RBCMaximizeKey = None;
+  IconificationStyle = flip;
+  WindowShortcut10Key = None;
+  IconTitleColor = "#ffffff";
+  MoveToWorkspace2Key = None;
+  MenuTitleColor = "#e8fd00";
+  MouseWheelTiltAction = None;
+  WindowShortcut3Key = None;
+  ClipAutolowerDelay = "";
+  MenuTitleFont = "FreeSans:slant=0:weight=200:width=100:pixelsize=18";
+  WindowRelaunchKey = None;
+  EnableWorkspacePager = NO;
+  WindowShortcut4Key = None;
+  AlignSubmenus = YES;
+  NoWindowOverDock = NO;
+  OmnipresentKey = None;
+  WorkspaceBack = (solid, "#505075");
+  LBCMaximizeKey = None;
+  SnapEdgeDetect = 1;
+  HighlightTextColor = "#000000";
+  ClipAutoexpandDelay = "";
+  WindowShortcut9Key = None;
+  HelpBalloons = NO;
+  WindowSnapping = NO;
+  MoveResizeKey = None;
+  AppIconBalloons = NO;
+  ClipTitleColor = "#ffffff";
+  WorkspaceBorder = None;
+  FrameFocusedBorderColor = "#000000";
+  WindowTitleFont = "Courier:slant=0:weight=80:width=100:pixelsize=16";
+  MoveToWorkspace8Key = None;
+  RunKey = "Mod1+D";
+  LHMaximizeKey = None;
+  MoveToPrevWorkspaceKey = None;
+  MoveToWorkspace6Key = None;
+  ResizebarBack = (solid, "#989aa6");
+  MoveToWorkspace10Key = None;
+  DisplayFont = "-*-helvetica-medium-r-normal-*-12-*-*-*-*-*-*-*";
+  BHMaximizeKey = None;
+  MouseBackwardButtonAction = None;
+  WorkspaceBorderSize = 0;
+  CycleActiveHeadOnly = NO;
+  DockRaiseLowerKey = None;
+  MoveToWorkspace1Key = None;
+  MenuTitleExtendSpace = 0;
+  IgnoreGtkHints = NO;
+  WindowShortcut1Key = None;
+  ShowClipTitle = YES;
+  RHMaximizeKey = None;
+  FrameSelectedBorderColor = "#ffffff";
+  THMaximizeKey = None;
+  ClipAutocollapseDelay = "";
+  Superfluous = YES;
+  WindowShortcut2Key = None;
+  MoveToNextWorkspaceLayerKey = None;
+  WorkspaceMapKey = None;
+  ToggleKbdModeKey = "Mod1+Return";
+  DragMaximizedWindow = Move;
+  DoNotMakeAppIconsBounce = NO;
+  MiniwindowTitleBalloons = NO;
+  MaximusKey = None;
+  WindowShortcut7Key = None;
+  OpaqueResize = NO;
+  MenuTextBack = (mhgradient, "#384246", "#707080", "#4a4a61");
+  RaiseAppIconsWhenBouncing = NO;
+  ResizeIncrement = 0;
+  CycleWorkspaces = YES;
+  WindowShortcut8Key = None;
+  OpaqueMoveResizeKeyboard = NO;
+  MoveToLastWorkspaceKey = None;
+  GroupNextKey = None;
+  MenuTextColor = "#ffffff";
+  SingleClickLaunch = NO;
+  Attraction = NO;
+  IconBack = (
+    mdgradient,
+    gray40,
+    "#6d6aa4",
+    "#564e8c",
+    "#41436c",
+    "#464771",
+    "#595090"
+  );
+  DisableBlinking = NO;
+  AntialiasedText = YES;
+  MoveToWorkspace5Key = None;
+  WindowTitleExtendSpace = 0;
+  NormalCursor = (builtin, left_ptr);
+  WorkspaceNameDisplayPosition = center;
+  MenuTextFont = "sans serif:slant=0:weight=100:width=100:pixelsize=15";
+  ScreenSwitchKey = None;
+  AdvanceToNewWorkspace = YES;
+  SnapCornerDetect = 10;
+  MenuTitleBack = (mvgradient, "#18191f", "#474967", "#413b6d");
+  MoveToNextWorkspaceKey = None;
+  HMaximizeKey = None;
+  CloseKey = "Mod1+W";
+  HighlightColor = "#ffffff";
+  GroupPrevKey = None;
+  MoveToWorkspace3Key = None;
+  MinimizeAllKey = None;
+  DisableDrawers = NO;
+  CClipTitleColor = "#999999";
+  WindowShortcut5Key = None;
+  HideOthersKey = None;
+  MenuStyle = flat;
+  ClipAutoraiseDelay = "";
+  WindowShortcut6Key = None;
+  MenuTextExtendSpace = 0;
+  PTitleBack = (mhgradient, "#5a5c66", "rgb:70/72/7e", "rgb:45/47/4e");
+  ViKeyMenus = NO;
+  BounceAppIconsWhenUrgent = YES;
+  UTitleColor = "#333333";
+  CirculateRaise = NO;
+  HighlightActiveApp = YES;
+  UTitleBack = (mhgradient, "#989aa6", "#9fa1b5", "#86879b");
+  PTitleColor = "#ffffff";
+  MoveToWorkspace4Key = None;
+  RTCMaximizeKey = None;
+}

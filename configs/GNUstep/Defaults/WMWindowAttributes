@@ -1,0 +1,180 @@
+{
+  firefox.Firefox = {
+    Icon = "/home/nils/GNUstep/Library/WindowMaker/CachedPixmaps/firefox.Firefox.xpm";
+  };
+  gkrellm.Gkrellm = {
+    Icon = "/home/nils/GNUstep/Library/WindowMaker/CachedPixmaps/gkrellm.Gkrellm.xpm";
+  };
+  color_palette.Gimp = {
+    AlwaysUserIcon = Yes;
+    NoResizebar = Yes;
+    Icon = "wmaker-gimp-palette.tif";
+  };
+  KTerm = {
+    Icon = GNUterm.tiff;
+  };
+  thunderbird.Thunderbird = {
+    Icon = "/home/nils/GNUstep/Library/WindowMaker/CachedPixmaps/thunderbird.Thunderbird.xpm";
+  };
+  Netscape = {
+    Icon = "wmaker-netscape.tif";
+  };
+  tool_options.Gimp = {
+    AlwaysUserIcon = Yes;
+    Icon = "wmaker-gimp-tooloption.tif";
+  };
+  xterm.XTerm = {
+    Icon = "/home/nils/GNUstep/Library/WindowMaker/CachedPixmaps/xterm.XTerm.xpm";
+  };
+  "jetbrains-pycharm-ce.jetbrains-pycharm-ce" = {
+    Icon = "/home/nils/GNUstep/Library/WindowMaker/CachedPixmaps/jetbrains-pycharm-ce.jetbrains-pycharm-ce.xpm";
+  };
+  emacs = {
+    Icon = "wmaker-emacs.tif";
+  };
+  WPrefs = {
+    Icon = "/usr/share/lib/GNUstep/System/Applications/WPrefs.app/WPrefs.tiff";
+  };
+  xcalc.XCalc = {
+    Icon = "/home/nils/GNUstep/Library/WindowMaker/CachedPixmaps/xcalc.XCalc.xpm";
+  };
+  xload.XLoad = {
+    Icon = "/home/nils/GNUstep/Library/WindowMaker/CachedPixmaps/xload.XLoad.xpm";
+  };
+  evince.Evince = {
+    Icon = "/home/nils/GNUstep/Library/WindowMaker/CachedPixmaps/evince.Evince.xpm";
+  };
+  toolbox.Gimp = {
+    NoAppIcon = Yes;
+    Icon = "wmaker-gimp2.tif";
+  };
+  WMSoundServer = {
+    Icon = Sound.tiff;
+  };
+  Dockit = {
+    Icon = GNUstep.tiff;
+  };
+  gthumb.Gthumb = {
+    Icon = "/home/nils/GNUstep/Library/WindowMaker/CachedPixmaps/gthumb.Gthumb.xpm";
+  };
+  groupLeader.WPrefs = {
+    Icon = "/home/nils/GNUstep/Library/WindowMaker/CachedPixmaps/groupLeader.WPrefs.xpm";
+  };
+  patternselection.Gimp = {
+    AlwaysUserIcon = Yes;
+    Icon = "wmaker-gimp-patterns.tif";
+  };
+  image_window.Gimp = {
+    AlwaysUserIcon = Yes;
+    Icon = "wmaker-gimp-work.tif";
+  };
+  Rxvt = {
+    Icon = GNUterm.tiff;
+  };
+  "Script-fu" = {
+    Icon = "wmaker-gimp-script-fu.tif";
+  };
+  gmc = {
+    SkipWindowList = Yes;
+    NoAppIcon = Yes;
+    Omnipresent = Yes;
+  };
+  Tile.WMClip = {
+    Icon = clip.tiff;
+  };
+  "file-roller.File-roller" = {
+    Icon = "/home/nils/GNUstep/Library/WindowMaker/CachedPixmaps/file-roller.File-roller.xpm";
+  };
+  "Mozilla-bin" = {
+    Icon = "wmaker-nav.tif";
+  };
+  xlogo.XLogo = {
+    Icon = "/home/nils/GNUstep/Library/WindowMaker/CachedPixmaps/xlogo.XLogo.xpm";
+  };
+  "*" = {
+    Icon = defaultAppIcon.tiff;
+  };
+  Logo.WMClip = {
+    Icon = clip.tiff;
+  };
+  preferences.Gimp = {
+    AlwaysUserIcon = Yes;
+    Icon = "wmaker-gimp-prefs.tif";
+  };
+  tip_of_the_day.Gimp = {
+    NoMiniaturizeButton = Yes;
+    AlwaysUserIcon = Yes;
+    NoResizebar = Yes;
+    Icon = "wmaker-gimp2.tif";
+    KeepOnTop = Yes;
+    NoCloseButton = Yes;
+  };
+  indexed_color_palette.Gimp = {
+    AlwaysUserIcon = Yes;
+    NoResizebar = Yes;
+    Icon = "wmaker-gimp-palette.tif";
+  };
+  "sun-awt-X11-XFramePeer.jetbrains-pycharm-ce" = {
+    Icon = "/home/nils/GNUstep/Library/WindowMaker/CachedPixmaps/sun-awt-X11-XFramePeer.jetbrains-pycharm-ce.xpm";
+  };
+  "script-fu.Script-fu" = {
+    Icon = "wmaker-gimp-script-fu.tif";
+  };
+  gimp.Gimp = {
+    Icon = "/home/nils/GNUstep/Library/WindowMaker/CachedPixmaps/gimp.Gimp.xpm";
+  };
+  panel = {
+    NoAppIcon = Yes;
+  };
+  layers_and_channels.Gimp = {
+    AlwaysUserIcon = Yes;
+    Icon = "wmaker-gimp-layers.tif";
+  };
+  brushselection.Gimp = {
+    AlwaysUserIcon = Yes;
+    Icon = "wmaker-gimp-brushes.tif";
+  };
+  gradient_editor.Gimp = {
+    AlwaysUserIcon = Yes;
+    Icon = "wmaker-gimp-gradient.tif";
+  };
+  okular.Okular = {
+    Icon = "/home/nils/GNUstep/Library/WindowMaker/CachedPixmaps/okular.Okular.xpm";
+  };
+  gimp_startup.Gimp = {
+    NotClosable = Yes;
+    NoTitlebar = Yes;
+    NotMiniaturizable = Yes;
+    AlwaysUserIcon = Yes;
+    NoResizebar = Yes;
+    Icon = "wmaker-gimp2.tif";
+  };
+  NXTerm = {
+    Icon = GNUterm.tiff;
+  };
+  "gnome-terminal-server.Gnome-terminal-server" = {
+    Icon = "/home/nils/GNUstep/Library/WindowMaker/CachedPixmaps/gnome-terminal-server.Gnome-terminal-server.xpm";
+  };
+  Logo.WMPanel = {
+    Icon = GNUstep.tiff;
+  };
+  obconf.Obconf = {
+    Icon = "/home/nils/GNUstep/Library/WindowMaker/CachedPixmaps/obconf.Obconf.xpm";
+  };
+  XTerm = {
+    Icon = GNUterm.tiff;
+  };
+  nautilus.Nautilus = {
+    Icon = "/home/nils/GNUstep/Library/WindowMaker/CachedPixmaps/nautilus.Nautilus.xpm";
+  };
+  gdeskcal.Gdeskcal = {
+    Icon = "/home/nils/GNUstep/Library/WindowMaker/CachedPixmaps/gdeskcal.Gdeskcal.xpm";
+  };
+  Logo.WMDock = {
+    Icon = GNUstep.tiff;
+  };
+  Gimp = {
+    AlwaysUserIcon = Yes;
+    Icon = "wmaker-gimp2.tif";
+  };
+}

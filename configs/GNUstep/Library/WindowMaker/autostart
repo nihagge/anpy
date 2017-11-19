@@ -1,0 +1,9 @@
+#!/bin/sh
+xset m 20/10 4
+wmCalClock & 
+wmmoonclock &
+wmtop &
+wmbattery &
+wmsetbg  /home/nils/Bilder/Wallpapers/CloudRains.png 
+/usr/bin/compton -bcCGf -i 0.8 -e 0.8 --no-fading-openclose --sw-opti
+

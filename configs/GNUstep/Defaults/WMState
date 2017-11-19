@@ -1,0 +1,240 @@
+{
+  Dock = {
+    AutoRaiseLower = No;
+    Applications = (
+      {
+        Forced = No;
+        Name = Logo.WMDock;
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,0";
+        Lock = Yes;
+        Command = "/usr/bin/WPrefs";
+      },
+      {
+        Forced = No;
+        Name = wmclockmon.DockApp;
+        DropCommand = "wmclockmon %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,3";
+        Lock = No;
+        PasteCommand = "wmclockmon %s";
+        Command = wmclockmon;
+      },
+      {
+        Forced = No;
+        Name = wmCalClock.wmCalClock;
+        DropCommand = "wmCalClock %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,4";
+        Lock = No;
+        PasteCommand = "wmCalClock %s";
+        Command = wmCalClock;
+      },
+      {
+        Forced = No;
+        Name = wmmoonclock.wmmoonclock;
+        DropCommand = "wmmoonclock %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,5";
+        Lock = No;
+        PasteCommand = "wmmoonclock %s";
+        Command = wmmoonclock;
+      },
+      {
+        Forced = No;
+        Name = wmtop.wmtop;
+        DropCommand = "wmtop %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,6";
+        Lock = No;
+        PasteCommand = "wmtop %s";
+        Command = wmtop;
+      },
+      {
+        Forced = No;
+        Name = wmbattery.wmbattery;
+        DropCommand = "wmbattery %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,7";
+        Lock = No;
+        PasteCommand = "wmbattery %s";
+        Command = wmbattery;
+      }
+    );
+    Applications1080 = (
+      {
+        Forced = No;
+        Name = Logo.WMDock;
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,0";
+        Lock = Yes;
+        Command = "/usr/bin/WPrefs";
+      },
+      {
+        Forced = No;
+        Name = wmclockmon.DockApp;
+        DropCommand = "wmclockmon %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,3";
+        Lock = No;
+        PasteCommand = "wmclockmon %s";
+        Command = wmclockmon;
+      },
+      {
+        Forced = No;
+        Name = wmCalClock.wmCalClock;
+        DropCommand = "wmCalClock %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,4";
+        Lock = No;
+        PasteCommand = "wmCalClock %s";
+        Command = wmCalClock;
+      },
+      {
+        Forced = No;
+        Name = wmmoonclock.wmmoonclock;
+        DropCommand = "wmmoonclock %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,5";
+        Lock = No;
+        PasteCommand = "wmmoonclock %s";
+        Command = wmmoonclock;
+      },
+      {
+        Forced = No;
+        Name = wmtop.wmtop;
+        DropCommand = "wmtop %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,6";
+        Lock = No;
+        PasteCommand = "wmtop %s";
+        Command = wmtop;
+      },
+      {
+        Forced = No;
+        Name = wmbattery.wmbattery;
+        DropCommand = "wmbattery %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,7";
+        Lock = No;
+        PasteCommand = "wmbattery %s";
+        Command = wmbattery;
+      }
+    );
+    Lowered = No;
+    Position = "-64,0";
+  };
+  Clip = {
+    Forced = No;
+    Name = Logo.WMClip;
+    DropCommand = "wmsetbg -u -t %d";
+    BuggyApplication = No;
+    AutoLaunch = No;
+    Position = "1856,64";
+    Lock = No;
+    Command = "-";
+  };
+  Drawers = (
+    {
+      Dock = {
+        AutoCollapse = Yes;
+        Applications = ();
+        Collapsed = Yes;
+        AutoAttractIcons = No;
+      };
+      Name = Drawer0;
+      Position = "5696,128";
+    }
+  );
+  Workspaces = (
+    {
+      Clip = {
+        AutoRaiseLower = No;
+        AutoCollapse = No;
+        Applications = ();
+        Collapsed = No;
+        AutoAttractIcons = No;
+        Lowered = Yes;
+      };
+      Name = Main;
+    },
+    {
+      Clip = {
+        AutoRaiseLower = No;
+        AutoCollapse = No;
+        Applications = ();
+        Collapsed = No;
+        AutoAttractIcons = No;
+        Lowered = Yes;
+      };
+      Name = "Arbeitsfl\303\244che: 2";
+    },
+    {
+      Clip = {
+        AutoRaiseLower = No;
+        AutoCollapse = No;
+        Applications = ();
+        Collapsed = No;
+        AutoAttractIcons = No;
+        Lowered = Yes;
+      };
+      Name = "Arbeitsfl\303\244che: 3";
+    },
+    {
+      Clip = {
+        AutoRaiseLower = No;
+        AutoCollapse = No;
+        Applications = ();
+        Collapsed = No;
+        AutoAttractIcons = No;
+        Lowered = Yes;
+      };
+      Name = "Arbeitsfl\303\244che: 4";
+    },
+    {
+      Clip = {
+        AutoRaiseLower = No;
+        AutoCollapse = No;
+        Applications = ();
+        Collapsed = No;
+        AutoAttractIcons = No;
+        Lowered = Yes;
+      };
+      Name = "Arbeitsfl\303\244che: 5";
+    },
+    {
+      Clip = {
+        AutoRaiseLower = No;
+        AutoCollapse = No;
+        Applications = ();
+        Collapsed = No;
+        AutoAttractIcons = No;
+        Lowered = Yes;
+      };
+      Name = "Arbeitsfl\303\244che: 6";
+    },
+    {
+      Clip = {
+        AutoRaiseLower = No;
+        AutoCollapse = No;
+        Applications = ();
+        Collapsed = No;
+        AutoAttractIcons = No;
+        Lowered = Yes;
+      };
+      Name = "Arbeitsfl\303\244che: 7";
+    }
+  );
+}

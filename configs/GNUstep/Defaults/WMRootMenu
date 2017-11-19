@@ -1,0 +1,217 @@
+(
+  Applications,
+  (XTerm, EXEC, "xterm -fa 'Monospace' -fs 10 -bg black -fg white"),
+  (
+    Applications,
+    (
+      Chat,
+      (Slack, EXEC, "/usr/bin/slack"),
+      (Skype, EXEC, "/usr/bin/skypeforlinux")
+    ),
+    (
+      Brwoser,
+      (Chrome, EXEC, "/usr/bin/chromium-browser"),
+      ("Mozilla Firefox", EXEC, firefox)
+    ),
+    (
+      Mail,
+      (Thunderbird, EXEC, "/usr/bin/thunderbird"),
+      ("Programm ausf\303\274hren", EXEC, "/usr/bin/evolution")
+    ),
+    (
+      Dev,
+      (PyCharm, EXEC, "~/dev/pycharm-community-2017.2.2/bin/pycharm.sh")
+    ),
+    (
+      Office,
+      ("Programm ausf\303\274hren", EXEC, libreoffice),
+      (Xpdf, EXEC, "xpdf %a(Enter PDF to view)"),
+      ("Okular - PDF", EXEC, okular)
+    ),
+    (
+      GRFX,
+      ("gthumb - Pic viewer", EXEC, "/usr/bin/gthumb"),
+      (Gimp, SHEXEC, "gimp >/dev/null"),
+      (Dia, EXEC, dia)
+    ),
+    (
+      Editors,
+      (VI, EXEC, "xterm -fa 'Monospace' -fs 14 -bg black -fg white -e vi"),
+      (atom, EXEC, atom),
+      (Xedit, EXEC, xedit)
+    ),
+    (
+      Utils,
+      (KeePass2, EXEC, "/usr/bin/keepass2"),
+      (Calculator, EXEC, xcalc),
+      (
+        "Window Properties",
+        SHEXEC,
+        "xprop | xmessage -center -title 'xprop' -file -"
+      ),
+      ("Font Chooser", EXEC, xfontsel),
+      (Magnify, EXEC, wmagnify),
+      (Colormap, EXEC, xcmap),
+      ("Kill X Application", EXEC, xkill)
+    )
+  ),
+  (Run..., EXEC, "%a(Run,Type command to run:)"),
+  (Workspaces, WORKSPACE_MENU),
+  (
+    Selection,
+    (Copy, SHEXEC, "echo '%s' | wxcopy"),
+    ("Mail To", EXEC, "xterm -name mail -T Pine -e pine %s"),
+    (Navigate, EXEC, "mozilla %s"),
+    ("Search in Manual", EXEC, "MANUAL_SEARCH(%s)")
+  ),
+  (
+    Commands,
+    ("Hide Others", HIDE_OTHERS),
+    ("Show All", SHOW_ALL),
+    ("Arrange Icons", ARRANGE_ICONS),
+    (Refresh, REFRESH),
+    (Lock, EXEC, "xlock -allowroot -usefirst")
+  ),
+  (
+    Appearance,
+    (
+      Themes,
+      OPEN_MENU,
+      "-noext /usr/share/WindowMaker/Themes $HOME/GNUstep/Library/WindowMaker/Themes WITH setstyle"
+    ),
+    (
+      Styles,
+      OPEN_MENU,
+      "-noext /usr/share/WindowMaker/Styles $HOME/GNUstep/Library/WindowMaker/Styles WITH setstyle"
+    ),
+    (
+      "Icon Sets",
+      OPEN_MENU,
+      "-noext /usr/share/WindowMaker/IconSets $HOME/GNUstep/Library/WindowMaker/IconSets WITH seticons"
+    ),
+    (
+      Background,
+      (
+        Solid,
+        (Black, EXEC, "wdwrite WindowMaker WorkspaceBack '(solid, black)'"),
+        (
+          Blue,
+          EXEC,
+          "wdwrite WindowMaker WorkspaceBack '(solid, \"#505075\")'"
+        ),
+        (
+          Indigo,
+          EXEC,
+          "wdwrite WindowMaker WorkspaceBack '(solid, \"#243e6c\")'"
+        ),
+        (
+          Bluemarine,
+          EXEC,
+          "wdwrite WindowMaker WorkspaceBack '(solid, \"#224477\")'"
+        ),
+        (
+          Purple,
+          EXEC,
+          "wdwrite WindowMaker WorkspaceBack '(solid, \"#554466\")'"
+        ),
+        (
+          Wheat,
+          EXEC,
+          "wdwrite WindowMaker WorkspaceBack '(solid, wheat4)'"
+        ),
+        (
+          "Dark Gray",
+          EXEC,
+          "wdwrite WindowMaker WorkspaceBack '(solid, \"#333340\")'"
+        ),
+        (
+          Wine,
+          EXEC,
+          "wdwrite WindowMaker WorkspaceBack '(solid, \"#400020\")'"
+        )
+      ),
+      (
+        Gradient,
+        (
+          Sunset,
+          EXEC,
+          "wdwrite WindowMaker WorkspaceBack '(mvgradient, deepskyblue4, black, deepskyblue4, tomato4)'"
+        ),
+        (
+          Sky,
+          EXEC,
+          "wdwrite WindowMaker WorkspaceBack '(vgradient, blue4, white)'"
+        ),
+        (
+          "Blue Shades",
+          EXEC,
+          "wdwrite WindowMaker WorkspaceBack '(vgradient, \"#7080a5\", \"#101020\")'"
+        ),
+        (
+          "Indigo Shades",
+          EXEC,
+          "wdwrite WindowMaker WorkspaceBack '(vgradient, \"#746ebc\", \"#242e4c\")'"
+        ),
+        (
+          "Purple Shades",
+          EXEC,
+          "wdwrite WindowMaker WorkspaceBack '(vgradient, \"#654c66\", \"#151426\")'"
+        ),
+        (
+          "Wheat Shades",
+          EXEC,
+          "wdwrite WindowMaker WorkspaceBack '(vgradient, \"#a09060\", \"#302010\")'"
+        ),
+        (
+          "Grey Shades",
+          EXEC,
+          "wdwrite WindowMaker WorkspaceBack '(vgradient, \"#636380\", \"#131318\")'"
+        ),
+        (
+          "Wine Shades",
+          EXEC,
+          "wdwrite WindowMaker WorkspaceBack '(vgradient, \"#600040\", \"#180010\")'"
+        )
+      ),
+      (
+        Images,
+        OPEN_MENU,
+        "-noext /usr/share/WindowMaker/Backgrounds $HOME/GNUstep/Library/WindowMaker/Backgrounds WITH wmsetbg -u -t"
+      )
+    ),
+    (
+      "Save Theme",
+      SHEXEC,
+      "getstyle -t $HOME/GNUstep/Library/WindowMaker/Themes/\"%a(Theme name)\""
+    ),
+    (
+      "Save IconSet",
+      SHEXEC,
+      "geticonset $HOME/GNUstep/Library/WindowMaker/IconSets/\"%a(IconSet name)\""
+    ),
+    (
+      "Preferences Utility",
+      EXEC,
+      "/usr/local/GNUstep/Applications/WPrefs.app/WPrefs"
+    )
+  ),
+  (
+    Info,
+    ("Info Panel", INFO_PANEL),
+    (Legal, LEGAL_PANEL),
+    ("System Console", EXEC, xconsole),
+    ("System Load", SHEXEC, "xosview || xload"),
+    ("Process List", EXEC, "xterm -e top"),
+    ("Manual Browser", EXEC, xman)
+  ),
+  ("Debian-Men\303\274", OPEN_MENU, "/etc/X11/WindowMaker/menu.hook"),
+  (
+    Session,
+    ("Save Session", SAVE_SESSION),
+    ("Clear Session", CLEAR_SESSION),
+    ("Restart Window Maker", RESTART),
+    ("Start BlackBox", RESTART, blackbox),
+    ("Start IceWM", RESTART, icewm),
+    (Exit, EXIT)
+  )
+)
