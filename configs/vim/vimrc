@@ -51,3 +51,9 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 "import some syntax highlighter ...
   au BufNewFile,BufRead *.yaml,*.yml,*.sls,Dockerfile,config.Vagrantfile so ~/.vim/vimhighlighter/yaml.vim
+
+command Seerene :r~/Dokumente/Seerene/SeereneCopyright.txt
+
+function Mycom()
+	call system('date')
+endfunction
