@@ -23,7 +23,7 @@ alias cd..='cd ../'
 alias cic='set completion-ignore-case On'
 alias cleanupDS='find . -type f -name '\''*.DS_Store'\'' -ls -delete'
 alias cleanupLS='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder'
-alias cp='cp -iv'
+alias cp='cp -v'
 alias cpu_hogs='ps wwaxr -o pid,stat,%cpu,time,command | head -10'
 alias edit='subl'
 alias editHosts='sudo vi /etc/hosts'
@@ -50,7 +50,7 @@ alias memHogsTop='top -l 1 -o rsize | head -20'
 alias mkdir='mkdir -pv'
 alias mountReadWrite='/sbin/mount -uw /'
 alias mv='mv -iv'
-alias myip='curl ip.appspot.com'
+alias myip='curl ifconfig.co'
 alias netCons='lsof -i'
 alias numFiles='echo $(ls -1 | wc -l)'
 alias openPorts='sudo lsof -i | grep LISTEN'
@@ -65,6 +65,16 @@ alias ttop='top -R -F -s 10 -o rsize'
 alias which='type -all'
 alias ~='cd ~'
 alias asm='~/AMIGA-Code/vasmm68k/vasmm68k_mot'
-alias pycharm='/home/nelse/devel/pycharm-community-2017.1.5/bin/pycharm.sh'
+# alias pycharm='/home/nelse/devel/pycharm-community-2017.1.5/bin/pycharm.sh'
 alias XX='i3lock -c 000000 -i /home/nils/Bilder/AtariLogo.png'
 alias lhost='ccat /home/nils/Dokumente/TechDocus/Hosts.txt'
+
+# tools
+alias tunnel='~/Dokumente/scripts/Tunnel/tunnelSEERENE.sh'
+
+## Git
+alias gl="git log --pretty=format:'%C(yellow)%h %C(red)%ad %C(bold blue)%an%Cgreen%d %Creset%s' --date=short -10"
+
+#kubectl config switch
+alias stage-kube="export KUBECONFIG=/home/nils/.kube/config-stage"
+alias prod-kube="export KUBECONFIG=/home/nils/.kube/config-prod"
