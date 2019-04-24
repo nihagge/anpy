@@ -1,5 +1,0 @@
-user1 :HX9LLTdc/jiDE
-
-SHA-512 : hashlib
-
-foo : bar
