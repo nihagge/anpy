@@ -1,68 +1,88 @@
 #!/usr/bin/python3
 import os
+import shutil
+from os import path
+target1=[]
 filelist =[]
 foldername=[]
+WorkFolder=("/home/nelse/tmp/SortMyRoms")
 Access_rights = 0o700
-# ABCFolder = ['a', 'b', 'c']
 ABCFolder = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 
-Path1='./PATH1/'
 
-#def CreateGameRomFolders():
-#    # print ("Create new folder:")
-#    for NewFolder in foldername:
-#        try:
-#            os.mkdir(NewFolder, Access_rights)
-#        except OSError:
-#           pass
-#    print ("done")
+def ListFolders():
+    os.chdir(WorkFolder)
+    for x in os.listdir():
+        if os.path.isfile(x):
+            if x not in filelist:
+                filelist.append(x)
+                #check for duplicates
+    print ("-> filelist:", filelist)
+    # print ("done")
+
+    for suffix in filelist:
+        suffix=suffix.split(".")
+        # print ("Suffix split:", suffix)
+        suffix1=(suffix[1])
+        # print ("Suffix:", suffix1)
+        if suffix1 not in foldername:
+            foldername.append(suffix1)
+    print ("foldername:", foldername)
 
 
 def CreateGameRomFolders():
-    # print ("Create new folder:")
+    print ("Foldername: ", foldername)
     for NewFolder in foldername:
         try:
             os.mkdir(NewFolder, Access_rights)
             for SortFolder in ABCFolder:
                 try:
-                    PathToCreate=(Path1,SortFolder)
-                    print ("here is comes: ", SortFolder)
-                    print ("deeper path", PathToCreate)
                     os.mkdir(os.path.join(NewFolder,SortFolder))
+                    # print("here is comes: ", NewFolder, SortFolder)
                 except:
                     pass
         except OSError:
            pass
     print ("done")
 
-def ListFolders():
-    # print ("list all folders ...")
-    for x in os.listdir("."):
-        if os.path.isfile(x):
-           # print ("File found", x)
-            filelist.append(x)
-    for suffix in filelist:
-        suffix1=suffix.split(".")
-        foldername.append(suffix1[1])
-    print (foldername)
+def CopyRomsIntoConsoleFolder():
+    print ("Files to copy:", filelist)
+    for ROM in filelist:
+        target=ROM.split(".")
+        target1=(target[1])
+        print ("Target1:", target1)
+        print ("Roms:", ROM)
+        #check if ROM == file
+        shutil.copy(ROM,target1)
+        return target1
+def CopyRomsAlphabeticalOder():
+    print ("Copy Roms in alphabetic order ...")
+    # target=("./nils")
+    target=("/home/nelse/tmp/SortMyRoms/nils")
+    os.chdir(target)
+    #print (os.getcwd())
+    #print (os.listdir(target))
+    print (".....................")
+    print (os.path.isdir(target))
+    print ("---------------------")
 
-def CreateABCFolder():
-    print ("A B C D E F")
-    for SortFolder in ABCFolder:
-        try:
-            PathToCreate=(Path1,SortFolder)
-            print ("here is comes: ", SortFolder)
-            print ("deeper path", PathToCreate)
-            os.mkdir(os.path.join(Path1,SortFolder))
-        except:
-            pass
+    for files in os.listdir(target):
+        #print ("files ??? ")
+        #print ("Files:", files)
+        #print ("Target:", target)
+        #print ("Is it File? ", (path.isfile(files)))
+        if os.path.isfile(files) == True:
+            print ("File !!", files)
+#
 
-# CreateABCFolder()
+
+
 ListFolders()
 CreateGameRomFolders()
+CopyRomsIntoConsoleFolder()
+CopyRomsAlphabeticalOder()
+# exit(100)
+# ListFolders()
+# CreateGameRomFolders()
 
 
-#root_path = '/whatever/your/root/path/is/'
-#folders = ['Folder_1','Folder_x','Folder_y']
-#for folder in folders:
-#    os.mkdir(os.path.join(root_path,folder))
